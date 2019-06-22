@@ -26,11 +26,29 @@ using namespace std;
 
 Bit::Bit(string file_name)
 {
-    read_file.open(file_name);
-    if(!read_file.is_open())
+    try
     {
-        cerr << "File not open!" << endl;
+        if(filesystem::exists(file_name))
+        {
+            read_file.open(file_name);
+            j = j.parse(read_file);
+        }
+        else
+        {
+            cerr << "There is no file called 'bit.json' here!\n";
+        }
     }
+    catch(nlohmann::json::parse_error& e)
+    {
+        cerr << "Some parse error happen, check documentation!" << "\n" 
+        << "Message: " << e.what() 
+        << "Exception id: " << e.id 
+        << "Byte position of error: " << e.byte << endl;
+    }
+    //if(!read_file.is_open())
+    //{
+    //    cerr << "File not open!" << endl;
+    //}
 }
 
 int Bit::run()
@@ -38,8 +56,8 @@ int Bit::run()
     File fi{};
     Compile comp{};
 
-    //read_file >> j;
-    j = j.parse(read_file);
+//  read_file >> j;
+//  j = j.parse(read_file);
     if(j.contains("type") && string(j["type"]) == "app")
     {
         if(j.contains("name") &&  j.contains("src_files") &&  j.contains("lang") &&  string(j["lang"]) == "c++")

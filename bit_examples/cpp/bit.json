@@ -2,7 +2,7 @@
 	"name" : "Hello_World",
 	"type" : "app",
 	"lang" : "c++",
-	"src_files" : "hello_world/",
+	"src_files" : "hello_world_cpp/",
 	"standard" : "11",
 	"execute" : 1,
     "_comment" : "A simple c++ example with a class to say hello!",
