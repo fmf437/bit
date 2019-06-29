@@ -9,4 +9,4 @@ addons:
     packages:
     - g++-8
 script:
-  - ./compile-bit.sh -d
+  - ./compile_bit.sh -d
