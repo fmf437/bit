@@ -2,6 +2,8 @@ sudo: false
 language: cpp
 compiler:
   - gcc
+install:
+  - build-essential
 addons:
   apt:
     sources:
