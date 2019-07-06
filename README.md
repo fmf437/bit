@@ -1,5 +1,7 @@
 bit
 
+Build status: [![CircleCI](https://circleci.com/gh/filipe-marques/bit/tree/master.svg?style=svg)](https://circleci.com/gh/filipe-marques/bit/tree/master)
+
 Table of Contents
 
 - [What is bit and it's design goals ?](#what-is-bit-design-goals)
